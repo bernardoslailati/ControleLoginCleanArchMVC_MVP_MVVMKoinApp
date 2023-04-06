@@ -1,49 +1,59 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/tvTitle"
-        android:text="@string/welcome"
-        android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="32dp"
+        android:text="@string/welcome"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/etEmail"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:hint="@string/password"
-        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="32dp"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:text="@string/enter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:text="@string/enter" />
 
     <TextView
         android:id="@+id/tvForgotPassword"
-        android:text="@string/forgot_password"
-        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="32dp"
+        android:text="@string/forgot_password"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvCarDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp"
+        android:layout_marginBottom="32dp"
+        android:textSize="24sp"
+        tools:text="Modelo Carro | Modelo Motor" />
 
 </LinearLayout>
