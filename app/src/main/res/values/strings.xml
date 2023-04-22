@@ -1,8 +1,3 @@
 <resources>
     <string name="app_name">ControleLoginApp</string>
-    <string name="welcome">Bem-vindo!</string>
-    <string name="email">E-mail</string>
-    <string name="password">Senha</string>
-    <string name="enter">Entrar</string>
-    <string name="forgot_password">Esqueceu a senha?</string>
 </resources>

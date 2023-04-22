@@ -1,20 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.example.controleloginapp'
+    namespace 'com.example.presentation'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.controleloginapp"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildFeatures {
@@ -38,11 +36,9 @@ android {
 
 dependencies {
 
-    implementation project(":presentation")
+    implementation project(":domain")
 
     implementation 'io.insert-koin:koin-android:3.3.3'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
