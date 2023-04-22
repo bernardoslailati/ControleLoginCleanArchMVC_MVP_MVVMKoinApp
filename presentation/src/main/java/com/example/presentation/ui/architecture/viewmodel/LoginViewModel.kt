@@ -1,4 +1,4 @@
-package com.example.presentation.viewmodel
+package com.example.presentation.ui.architecture.viewmodel
 
 import com.example.domain.model.ProfileModel
 import com.example.domain.usecase.GetProfileUseCase

@@ -1,4 +1,4 @@
-package com.example.presentation.controller
+package com.example.presentation.ui.architecture.controller
 
 import com.example.domain.usecase.GetProfileUseCase
 import com.example.domain.usecase.LoginUseCase

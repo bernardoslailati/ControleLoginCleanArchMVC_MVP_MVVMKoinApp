@@ -2,7 +2,7 @@ package com.example.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.presentation.controller.LoginController
+import com.example.presentation.ui.architecture.controller.LoginController
 import com.example.presentation.databinding.ActivityLoginBinding
 import com.example.presentation.ui.extension.showToast
 import org.koin.android.ext.android.inject
