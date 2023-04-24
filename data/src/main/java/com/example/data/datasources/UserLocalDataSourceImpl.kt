@@ -9,7 +9,7 @@ class UserLocalDataSourceImpl(context: Context): UserLocalDataSource {
     // acessar SharedPreferences...
     
     override fun getProfile() : ProfileLocalModel {
-        return ProfileLocalModel("Teste", "teste", "123")
+        return ProfileLocalModel("", "teste", "123")
     }
 
 }
