@@ -8,6 +8,7 @@ import com.example.presentation.ui.architecture.presenter.LoginPresenterImpl
 import com.example.presentation.ui.architecture.presenter.base.LoginPresenter
 import com.example.presentation.ui.architecture.viewmodel.LoginViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val presentationModule = module {
@@ -16,4 +17,5 @@ val presentationModule = module {
     single { LoginViewModel(get(), get()) }
     single { LoginController(get(), get(), get()) }
     factory<LoginPresenter> { LoginPresenterImpl(get(), get()) }
+    viewModel { LoginViewModel(get(), get()) }
 }
