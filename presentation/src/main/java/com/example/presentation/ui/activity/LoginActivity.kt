@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.domain.model.ProfileModel
 import com.example.presentation.ui.architecture.controller.LoginController
 import com.example.presentation.databinding.ActivityLoginBinding
@@ -39,13 +40,28 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
     
     private fun addObservers() {
-        loginViewModel.isLoggedIn.observe(this) { isLoggedIn ->
-            isLoggedIn?.let {
-                if (it)
-                    showToast("Login efetuado com sucesso!")
-                else
-                    showToast("Falha ao efetuar login.")
+//      Coletar SharedFlow (não pode ser nulo)...
+        lifecycleScope.launchWhenResumed {
+            loginViewModel.isLoggedIn.collect { isLoggedIn ->
+                showToast(if (isLoggedIn) "Usuário logado com sucesso!" else "Falha ao logar usuário. Tente novamente.")
             }
+        }
+        
+//        Coletar StateFlow (pode ser nulo)...
+//        lifecycleScope.launchWhenResumed {
+//            loginViewModel.isLoggedIn.collect { isLoggedIn ->
+//                isLoggedIn?.let {
+//                    showToast(if (isLoggedIn) "Usuário logado com sucesso!" else "Falha ao logar usuário. Tente novamente.")
+//                }
+//            }
+//        }
+
+//        loginViewModel.isLoggedIn.observe(this) { isLoggedIn ->
+//            showToast(if (isLoggedIn) "Usuário logado com sucesso!" else "Falha ao logar usuário. Tente novamente.")
+//        }
+    
+        loginViewModel.profile.observe(this) { profile ->
+            binding.tvTitle.text = "Bem-vindo ${profile.name}!"
         }
     
         loginViewModel.profile.observe(this) { profile ->
